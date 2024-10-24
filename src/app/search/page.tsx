@@ -8,7 +8,9 @@ interface SearchPageProps {
   }
 }
 
-const SearchPage = ({ searchParams: { term } }: SearchPageProps) => {
+const SearchPage = async ({ searchParams }: SearchPageProps) => {
+  const { term } = await searchParams
+
   if (!term) {
     redirect('/')
   }
